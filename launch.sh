@@ -11,6 +11,7 @@ echo "Starting vpic on master"
 
 # make the run directory belong to vpic
 cp -r /home/vpic/* /mnt/vpicrun
+mkdir -p /mnt/vpicrun/vpic.bin
 chown -R vpic:vpic /mnt/vpicrun/*
 
 # run the vpic code  on master

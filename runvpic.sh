@@ -1,8 +1,5 @@
 #/bin/bash
 
-<<<<<<< HEAD
-=======
-mkdir /mnt/vpicrun/vpic.bin
 cd /mnt/vpicrun/vpic.bin
 cmake \
   -DUSE_CATALYST=ON \
@@ -10,9 +7,8 @@ cmake \
   /mnt/vpicrun/vpic
 make -j16
 
->>>>>>> mntbuild
 # prep and run one of the example input decks
-mkdir /mnt/vpicrun/vpicrun1
+mkdir -p /mnt/vpicrun/vpicrun1
 cd /mnt/vpicrun/vpic.bin
 ./bin/vpic ../vpic/sample/harris
 cd /mnt/vpicrun/vpicrun1
@@ -22,17 +18,10 @@ cd /mnt/vpicrun/vpicrun1
 cd /mnt/vpicrun/vpic.bin
 export CPLUS_INCLUDE_PATH=/mnt/vpicrun/vpic/src/util/catalyst/
 ./bin/vpic ../vpic/sample/8preconnection.cxx
-<<<<<<< HEAD
-mkdir /mnt/vpic/vpicrun/vpicrun2
-cd /mnt/vpic/vpicrun/vpicrun2
-export LD_LIBRARY_PATH=/usr/local/paraview.bin/lib
-mpirun -machinefile /home/vpic/machinefile /home/vpic/vpic.bin/8preconnection.Linux
-=======
-mkdir /mnt/vpicrun/vpicrun2
+mkdir -p /mnt/vpicrun/vpicrun2
 cd /mnt/vpicrun/vpicrun2
 export LD_LIBRARY_PATH=/usr/local/paraview.bin/lib
 echo "Sleeping 5 to wait for filehandle."
 sleep 5
 echo "Launching 8preconnection"
 LD_LIBRARY_PATH=/usr/local/paraview.bin/lib mpiexec -machinefile /mnt/vpicrun/machinefile /mnt/vpicrun/vpic.bin/8preconnection.Linux
->>>>>>> mntbuild
