@@ -22,4 +22,7 @@ export CPLUS_INCLUDE_PATH=/mnt/vpicrun/vpic/src/util/catalyst/
 mkdir /mnt/vpicrun/vpicrun2
 cd /mnt/vpicrun/vpicrun2
 export LD_LIBRARY_PATH=/usr/local/paraview.bin/lib
+echo "Sleeping 5 to wait for filehandle."
+sleep 5
+echo "Launching 8preconnection"
 LD_LIBRARY_PATH=/usr/local/paraview.bin/lib mpiexec -machinefile /mnt/vpicrun/machinefile /mnt/vpicrun/vpic.bin/8preconnection.Linux
