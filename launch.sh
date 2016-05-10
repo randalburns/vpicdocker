@@ -5,12 +5,8 @@ if [ $HOSTNAME == 'master' ]; then
 
 echo "Starting vpic on master"
 
-# Move build files to nfs shared mount
-#cp -r /home/vpic/* /mnt/vpic
-#chown -R vpic:vpic /mnt/vpic/* 
-
-# run the code as vpic user
-su vpic -c /home/vpic/runvpic.sh 
+# run the vpic code  on master
+/mnt/vpicrun/runvpic.sh 
 
 # All slave nodes launch the ssh server
 else

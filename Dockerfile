@@ -43,13 +43,15 @@ WORKDIR /home/vpic/vpic
 RUN git checkout -b dockerify origin/dockerify
 RUN git submodule init
 RUN git submodule update
-RUN mkdir /home/vpic/vpic.bin
-WORKDIR /home/vpic/vpic.bin
-RUN cmake \
-  -DUSE_CATALYST=ON \
-  -DCMAKE_BUILD_TYPE=Release \
-  /home/vpic/vpic
-RUN make -j16
+
+# RBTODO move this to runvpic.sh
+#RUN mkdir /home/vpic/vpic.bin
+#WORKDIR /home/vpic/vpic.bin
+#RUN cmake \
+#  -DUSE_CATALYST=ON \
+#  -DCMAKE_BUILD_TYPE=Release \
+#  /home/vpic/vpic
+#RUN make -j16
 
 # add the launcher scripts for the docker file
 ADD launch.sh /home/vpic

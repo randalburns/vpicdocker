@@ -39,7 +39,7 @@ Terminate the docker containers running the cluster.  This is run from the StarC
   * Test your installation with an interactive launch.  The following starts sshd on all the slave docker containers in the background, then launches a root bash shell on the master node docker container, and then runs the simulation.
 ````
     mpirun -hostfile hostfile --mca btl_tcp_if_include eth0 ./mpirun_sshd.sh --verbose --output-filename=mpisshd &
-    docker run -it --net=host -v /home/vpic:/mnt/vpic vpic /bin/bash
+    docker run -it --net=host -v /home/vpic/vpicrun:/mnt/vpicrun vpic /bin/bash
     su vpic
     ./runvpic.sh
 ````
