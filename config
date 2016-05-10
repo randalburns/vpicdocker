@@ -1,0 +1,4 @@
+host *
+  port 9222
+  StrictHostKeyChecking no
+  UserKnownHostsFile=/dev/null
