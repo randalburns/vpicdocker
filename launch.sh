@@ -3,11 +3,15 @@
 # if you are the master node run the code
 if [ $HOSTNAME == 'master' ]; then
 
+echo"Sleeping 10"
+
+sleep 10
+
 echo "Starting vpic on master"
 
-# Move build files to nfs shared mount
-#cp -r /home/vpic/* /mnt/vpic
-#chown -R vpic:vpic /mnt/vpic/* 
+#make the vpic directory writeable
+mkdir /mnt/vpic/vpicrun
+chown -R vpic:vpic /mnt/vpic/vpicrun
 
 # run the code as vpic user
 su vpic -c /home/vpic/runvpic.sh 
