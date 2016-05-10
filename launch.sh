@@ -10,7 +10,7 @@ echo "Starting vpic on master"
 #chown -R vpic:vpic /mnt/vpic/* 
 
 # run the code as vpic user
-RBTODO su vpic -c /home/h3d/runvpic.sh 
+su vpic -c /home/vpic/runvpic.sh 
 
 # All slave nodes launch the ssh server
 else
