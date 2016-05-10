@@ -34,7 +34,7 @@ Terminate the docker containers running the cluster.  This is run from the StarC
 ````
 
 
-<h3> Interactive Launch <-/h3>
+<h3> Interactive Launch </h3>
    
   * Test your installation with an interactive launch.  The following starts sshd on all the slave docker containers in the background, then launches a root bash shell on the master node docker container, and then runs the simulation.
 ````
@@ -55,4 +55,7 @@ Terminate the docker containers running the cluster.  This is run from the StarC
     mpirun -hostfile hostfile --mca btl_tcp_if_include eth0 ./mpistopcluster.sh --verbose
 ````
 
+<h3> Concepts </h3>
+
+RBTODO talk about where the mount directories are and how the code runs.
  
