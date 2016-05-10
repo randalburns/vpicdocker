@@ -40,8 +40,7 @@ Terminate the docker containers running the cluster.  This is run from the StarC
 ````
     mpirun -hostfile hostfile --mca btl_tcp_if_include eth0 ./mpirun_sshd.sh --verbose --output-filename=mpisshd &
     docker run -it --net=host -v /home/vpic/vpicrun:/mnt/vpicrun vpic /bin/bash
-    su vpic
-    ./runvpic.sh
+    ./launch.sh
 ````
 
   * Monitor the output -- from the virtual machine (not inside the container).
