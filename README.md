@@ -1,8 +1,9 @@
 
 <h3> Running BEE-atified VPIC using Docker in AWS </h3>
 
+**For Darwin instructions check out the darwin branch and see the BEE launcher https://github.com/randalburns/bee_launcher.git.**
 
-Follow the DSS Viz Wiki instructions on configuring and starting a cluster _link here_.
+Follow the DSS Viz Wiki instructions on configuring and starting a cluster https://darwin.lanl.gov/projects/vizproject/wiki/AWS-setup-notes and https://darwin.lanl.gov/projects/vizproject/wiki/Starcluster-notes.
 
 Once a Starcluster Enviroment is configured (see below), running VPIC in AWS consists of logging into a StarCluster from your local machine. 
 ````
@@ -18,8 +19,9 @@ mkdir -p ../vpicrun
 ````
 You will need to edit _hostfile_ and _machinefile_ to reflect the topology of the cluster that you 
 have launched.  _hostfile_ is in OpenMPI format and should have 1 slot per node and is used to launch docker on each node.
-_machinefile_ should be in MPICH format and have one slot per core or virtual processor in AWS.  __Add links for how to configure OpenMPI and MPIC__.
-
+_machinefile_ should be in MPICH format and have one slot per core or virtual processor in AWS. Instructions for 
+configuring parallelism are atj
+https://darwin.lanl.gov/projects/virtualized-environments/wiki/Configuring_hostfile_and_machinefile.
 Then pull the docker layers and run the code
 ````
 mpirun -hostfile hostfile --mca btl_tcp_if_include eth0 ./mpibuild_vpic.sh --verbose 
