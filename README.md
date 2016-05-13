@@ -17,7 +17,7 @@ git pull https://github.com/randalburns/vpicdocker.git
 cd vpicdocker
 mkdir -p ../vpicrun
 ````
-You will need to edit _hostfile_ and _machinefile_ to reflect the topology of the cluster that you 
+Once logged into the StarCluster, you will need to edit _hostfile_ and _machinefile_ to reflect the topology of the cluster that you 
 have launched.  _hostfile_ is in OpenMPI format and should have 1 slot per node and is used to launch docker on each node.
 _machinefile_ should be in MPICH format and have one slot per core or virtual processor in AWS. Instructions for 
 configuring parallelism are atj
@@ -44,8 +44,10 @@ mpirun -hostfile hostfile --mca btl_tcp_if_include eth0 ./mpirun_sshd.sh --verbo
 docker run -it --net=host -v /home/vpic/vpicrun:/mnt/vpicrun vpic /bin/bash
 ./launch.sh
 ````
+Running docker with the _-it_ option gives you an interactive shell inside the container that you can use to edit and run codes.
+If you invoke _..//launch.sh_ it runs the code with the default parameters.
 
-  * Monitor the output -- from the virtual machine (not inside the container).
+  * Monitor the output -- from the virtual machine (not inside the container).  You will need another shell.
   
 ````
 tail -f /home/vpic/vpicrun/.....
