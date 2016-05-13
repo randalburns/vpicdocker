@@ -49,7 +49,7 @@ RUN git submodule update
 # add the launcher scripts for the docker file
 ADD launch.sh /home/vpic
 ADD launch_sshd.sh /home/vpic
-ADD run_vpic.sh /home/vpic
+ADD dockerrunvpic.sh /home/vpic
 ADD machinefile /home/vpic
 
 WORKDIR /home/vpic
